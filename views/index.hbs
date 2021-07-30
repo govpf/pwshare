@@ -1,0 +1,31 @@
+<form action="" method="POST">
+    <div>
+        <input name="password" type="text" placeholder="The Password to be shared"/>
+    </div>
+    <h2>Expiration settings</h2>
+    <div>
+        <div>
+            <input name="days_limit" type="range" min="1" max="14" value="1" oninput="updateDays(this.value)"/><span id="days">1</span> days
+        </div>
+        <div>
+            <input name="views_remaining" type="range" min="5" max="100" value="1" oninput="updateViews(this.value)"/><span id="views">1</span> views
+        </div>
+    </div>
+    <div>
+        <button type="submit">Share</button>
+    </div>
+</form>
+{{#if id}}
+<div>
+    <h2>Lien</h2>
+    <p><a href="/secret/{{id}}">{{ id }}</a></p>
+</div>
+{{/if}}
+<script>
+    function updateDays(days) {
+        document.getElementById('days').innerHTML = days;
+    }
+    function updateViews(views) {
+        document.getElementById('views').innerHTML = views;
+    }
+</script>
