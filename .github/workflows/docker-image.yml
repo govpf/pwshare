@@ -38,7 +38,7 @@ jobs:
         tags: |
           ${{ env.repo }}:latest
     - name: Update repo description
-      uses: peter-evans/dockerhub-description@v3.0.0
+      uses: peter-evans/dockerhub-description@v3.1.0
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
